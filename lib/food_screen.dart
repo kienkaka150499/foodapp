@@ -14,15 +14,15 @@ class FoodScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Map<String, Categories>? arguments =
         ModalRoute.of(context)?.settings.arguments as Map<String, Categories>?;
-    this.categories = arguments!['category'];
+    categories = arguments!['category'];
     List<Food> foods = FAKE_FOODS
-        .where((food) => food.categoryId == this.categories!.id)
+        .where((food) => food.categoryId == categories!.id)
         .toList();
     // TODO: implement build
     return Scaffold(
       backgroundColor: Colors.deepOrangeAccent,
       appBar: AppBar(
-        title: Text('${categories!.content}'),
+        title: Text(categories!.content),
         centerTitle: true,
       ),
       body: SafeArea(
@@ -35,7 +35,8 @@ class FoodScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Container(
-                        margin: EdgeInsets.all(15),
+                        margin: const EdgeInsets.all(15),
+                        width: 350,
                         child: Center(
                           child: FadeInImage.assetNetwork(
                             placeholder: 'assets/images/loading.gif',
@@ -44,7 +45,7 @@ class FoodScreen extends StatelessWidget {
                         )),
                     Text(
                       food.name!,
-                      style: TextStyle(fontSize: 25),
+                      style: const TextStyle(fontSize: 25),
                     )
                   ],
                 ),

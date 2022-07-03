@@ -8,14 +8,14 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return GridView(
-      padding: EdgeInsets.all(12),
-      children: FAKE_CATEGORIES.map((eachCategory) => CategoriesItem(category: eachCategory)).toList(),
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+      padding: const EdgeInsets.all(12),
+      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 300,
-        childAspectRatio: 3 / 3,
+        childAspectRatio: 1,
         mainAxisSpacing: 12,
         crossAxisSpacing: 12,
       ),
+      children: FAKE_CATEGORIES.map((eachCategory) => CategoriesItem(category: eachCategory)).toList(),
     );
   }
 }

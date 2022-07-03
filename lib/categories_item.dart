@@ -17,10 +17,10 @@ class CategoriesItem extends StatelessWidget {
       splashColor: Colors.black,
       child: Container(
         decoration: BoxDecoration(
-            color: this.category.color,
+            color: category.color,
             gradient: LinearGradient(colors: [
-              this.category.color!.withOpacity(0.95),
-              this.category.color!
+              category.color!.withOpacity(0.95),
+              category.color!
             ], begin: Alignment.topLeft, end: Alignment.bottomRight),
             borderRadius: BorderRadius.circular(15)),
         child: Column(
@@ -28,8 +28,8 @@ class CategoriesItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              this.category.content,
-              style: TextStyle(
+              category.content,
+              style: const TextStyle(
                 fontSize: 30,
                 color: Colors.white,
               ),
